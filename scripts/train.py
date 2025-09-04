@@ -18,3 +18,7 @@ features = [
 ]
 target = 'Expected_CTC'
 
+# Split features into categorical and numerical
+categorical_features = ['Industry', 'Department', 'Role', 'Education']
+numerical_features = ['Total_Experience', 'No_Of_Companies_worked', 'Current_CTC']
+
