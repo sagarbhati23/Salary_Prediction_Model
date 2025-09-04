@@ -28,3 +28,9 @@ preprocessor = ColumnTransformer([
     ('num', StandardScaler(), numerical_features)
 ])
 
+# Pipeline
+pipeline = Pipeline([
+    ('preprocessor', preprocessor),
+    ('regressor', LinearRegression())
+])
+
