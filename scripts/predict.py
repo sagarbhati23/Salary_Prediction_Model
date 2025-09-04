@@ -3,6 +3,28 @@ import joblib
 import pandas as pd
 import os
 
+def get_input(prompt, dtype=str, allowed=None, positive=False):
+    """Prompt user for input, validate type, allowed values, and positivity."""
+    while True:
+        value = input(prompt)
+        try:
+            if dtype == str:
+                value = value.strip()
+                if not value:
+                    print("Input cannot be empty. Please enter a valid value.")
+                    continue
+                if allowed and value not in allowed:
+                    print(f"Invalid input. Allowed values: {', '.join(sorted(allowed))}")
+                    continue
+                return value
+            val = dtype(value)
+            if positive and val <= 0:
+                print(f"Value must be a positive {dtype.__name__}.")
+                continue
+            return val
+        except Exception:
+            print(f"Invalid input. Please enter a valid {dtype.__name__}.")
+
 # Load model from outer directory
 model_path = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'models', 'model.joblib')
 try:
