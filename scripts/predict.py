@@ -26,6 +26,17 @@ industry_examples = "IT, Insurance, Retail"
 department_examples = "Engineering, Sales, Education"
 role_examples = "Manager, Scientist, Analyst, Team Lead"
 
-
+print("--- Salary Prediction ---")
+user_input = {}
+user_input['Industry'] = get_input(f"Enter Industry (e.g., {industry_examples}): ", str, allowed_industries)
+user_input['Department'] = get_input(f"Enter Department (e.g., {department_examples}): ", str, allowed_departments)
+user_input['Role'] = get_input(f"Enter Role/Designation (e.g., {role_examples}): ", str, allowed_roles)
+    
+# For education, keep the first allowed value as example
+education_example = next(iter(allowed_educations)) if allowed_educations else ""
+user_input['Education'] = get_input(f"Enter Education Level (e.g., {education_example}): ", str, allowed_educations)
+user_input['Total_Experience'] = get_input("Enter Total Experience (years, decimal allowed): ", float, positive=True)
+user_input['No_Of_Companies_worked'] = get_input("Enter Number of Companies Worked: ", int, positive=True)
+user_input['Current_CTC'] = get_input("Enter Current CTC (decimal allowed): ", float, positive=True)
 
 
