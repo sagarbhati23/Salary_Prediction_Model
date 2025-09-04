@@ -21,4 +21,11 @@ allowed_roles = set(df['Role'].dropna().unique())
 allowed_educations = set(df['Education'].dropna().unique())
 
 
+# Fixed examples for prompts
+industry_examples = "IT, Insurance, Retail"
+department_examples = "Engineering, Sales, Education"
+role_examples = "Manager, Scientist, Analyst, Team Lead"
+
+
+
 
