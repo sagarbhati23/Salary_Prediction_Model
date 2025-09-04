@@ -34,3 +34,8 @@ pipeline = Pipeline([
     ('regressor', LinearRegression())
 ])
 
+# Train model
+X = df[features]
+y = df[target]
+pipeline.fit(X, y)
+
