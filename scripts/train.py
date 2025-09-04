@@ -22,3 +22,9 @@ target = 'Expected_CTC'
 categorical_features = ['Industry', 'Department', 'Role', 'Education']
 numerical_features = ['Total_Experience', 'No_Of_Companies_worked', 'Current_CTC']
 
+# Preprocessing
+preprocessor = ColumnTransformer([
+    ('cat', OneHotEncoder(handle_unknown='ignore'), categorical_features),
+    ('num', StandardScaler(), numerical_features)
+])
+
