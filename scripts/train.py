@@ -12,3 +12,9 @@ import os
 data_path = os.path.join('..', 'data', 'expected_ctc.csv')
 df = pd.read_csv(data_path)
 
+# feature columns (as per the dataset)
+features = [
+    'Industry', 'Department', 'Role', 'Total_Experience', 'No_Of_Companies_worked', 'Current_CTC', 'Education'
+]
+target = 'Expected_CTC'
+
