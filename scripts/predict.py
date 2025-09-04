@@ -39,4 +39,11 @@ user_input['Total_Experience'] = get_input("Enter Total Experience (years, decim
 user_input['No_Of_Companies_worked'] = get_input("Enter Number of Companies Worked: ", int, positive=True)
 user_input['Current_CTC'] = get_input("Enter Current CTC (decimal allowed): ", float, positive=True)
 
+X_new = pd.DataFrame([user_input])
+try:
+    predicted_salary = model.predict(X_new)[0]
+    print(f"\nPredicted Salary (CTC): {predicted_salary:.2f}")
+except Exception as e:
+        print(f"Prediction failed: {e}")
+
 
