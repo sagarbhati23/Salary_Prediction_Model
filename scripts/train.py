@@ -8,3 +8,7 @@ from sklearn.pipeline import Pipeline
 import joblib
 import os
 
+# Load dataset
+data_path = os.path.join('..', 'data', 'expected_ctc.csv')
+df = pd.read_csv(data_path)
+
