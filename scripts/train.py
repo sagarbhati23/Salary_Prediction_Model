@@ -39,3 +39,10 @@ X = df[features]
 y = df[target]
 pipeline.fit(X, y)
 
+# Save model
+models_dir = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'models')
+os.makedirs(models_dir, exist_ok=True)
+model_path = os.path.join(models_dir, 'model.joblib')
+joblib.dump(pipeline, model_path)
+print(f'Model trained and saved to {model_path}')
+
