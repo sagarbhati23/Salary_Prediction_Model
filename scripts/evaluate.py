@@ -7,9 +7,11 @@ import pandas as pd
 from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
 
 # Paths
-BASE_DIR = os.path.dirname(os.path.dirname(__file__))
-MODEL_PATH = os.path.join(BASE_DIR, 'models', 'model.joblib')
-TEST_DATA_PATH = os.path.join(BASE_DIR, 'data', 'expected_ctc.csv')
+
+# Set model path to models directory inside scripts folder
+SCRIPT_DIR = os.path.dirname(__file__)
+MODEL_PATH = os.path.join(SCRIPT_DIR, 'models', 'model.joblib')
+TEST_DATA_PATH = os.path.join(os.path.dirname(SCRIPT_DIR), 'data', 'expected_ctc.csv')
 
 # Load model
 try:
